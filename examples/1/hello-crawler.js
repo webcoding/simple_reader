@@ -4,12 +4,15 @@ var jsdom = require('jsdom');
 var c = new Crawler({
     jQuery: jsdom,
     maxConnections : 100,
-    forceUTF8:true,
+    forceUTF8: true,
   // incomingEncoding: 'gb2312',
     // This will be called for each crawled page
     callback : function (error, result, $) {
       var urls = $('#list a');
-      console.log(urls)
+      // console.log(urls);
+      urls.each(function(index, item){
+        console.log(item.href);
+      });
     }
 });
 

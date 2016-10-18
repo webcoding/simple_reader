@@ -13,9 +13,9 @@ var c = new Crawler({
     callback : function (error, result, $) {
       var urls = $('#list a');
       // console.log(urls)
-      
+
       utils.mkdir('0/330');
-      
+
       current_book.title = $('#maininfo h1').text()
       current_book.author = $('#info p').eq(0).text()
       current_book.update_time = $('#info p').eq(2).text()
@@ -56,9 +56,9 @@ function one(chapter){
     callback: function (error, result, $) {
       var content = $('#content').html();
       console.log(content)
-      
+
       utils.write_chapter(chapter, content);
-      
+
       process.exit()
     }
   }]);
@@ -68,4 +68,4 @@ function start(){
   c.queue('http://www.biquku.com/0/330/');
 }
 
-start()
+start();
